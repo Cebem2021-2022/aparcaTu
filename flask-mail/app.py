@@ -3,26 +3,27 @@ from flask import Flask
 
 from flask_mail import Mail
 
-import asyncio
+from preferences import *
 
 app = Flask(__name__)
 
-app.config['MAIL_SERVER'] = 'smtp.gmail.com'
-app.config['MAIL_PORT'] = 465
-app.config['MAIL_USERNAME'] = 'cebem2021@gmail.com'
-app.config['MAIL_PASSWORD'] = 'Ad1234Ad1234'
-app.config['MAIL_USE_TLS'] = False
-app.config['MAIL_USE_SSL'] = True
+app.config['MAIL_SERVER'] = smtpServer
+app.config['MAIL_PORT'] = port
+app.config['MAIL_USERNAME'] = username
+app.config['MAIL_PASSWORD'] = password
+app.config['MAIL_USE_TLS'] = useTLS
+app.config['MAIL_USE_SSL'] = useSSL
 
 mail = Mail(app)
 
 def send_message():
 
+
     msg = mail.send_message(
-        'Hola Angel',
-        sender='cebem2021@gmail.com',
-        recipients=['gonzalezm.angel@gmail.com'],
-        body="Si ves este correo, es porque la API de Flask-Mail funciona"
+        subjectMsg,
+        sender=senderMsg,
+        recipients=[recipientMsg],
+        body=bodyMsg
     )
 
     mail.send(msg)
