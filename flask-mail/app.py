@@ -3,7 +3,7 @@ from flask import Flask
 
 from flask_mail import Mail
 
-from preferences import *
+from __login.preferences import *
 
 app = Flask(__name__)
 
