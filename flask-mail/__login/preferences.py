@@ -2,7 +2,7 @@
 smtpServer = 'smtp.gmail.com'
 port = '465'
 username = 'cebem2021@gmail.com' 
-password = 'una contraseña cualquiera'
+password = 'contraseñadeejemplo'
 useTLS = False
 useSSL = True
 
